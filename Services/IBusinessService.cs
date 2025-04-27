@@ -8,7 +8,7 @@ namespace MyWalletApi.Services
 
         Task<decimal> ObterSaldo(int usuarioId);
 
-        Task AdicionarSaldo(int usuarioId, decimal saldo);
+        Task AdicionarSaldo(IncrementSaldoParameter saldoParams);
 
         Task<IEnumerable<TransacaoResponseDto>> ObterTransacoes(int usuarioId);
 

@@ -18,14 +18,14 @@ public class BusinessService : IBusinessService
         _mapper = mapper;
     }
 
-    public async Task AdicionarSaldo(int usuarioId, decimal saldo)
+    public async Task AdicionarSaldo(IncrementSaldoParameter saldoParams)
     {
         var usuario = await _uWork.UsuarioRepository
-       .Get(u => u.Id == usuarioId, u => u.Carteira);
+       .Get(u => u.Id == saldoParams.UsuarioId, u => u.Carteira);
 
         if (usuario?.Carteira == null) throw new InvalidOperationException("Carteira não encontrada para o usuario");
 
-        usuario.Carteira.Saldo += saldo;
+        usuario.Carteira.Saldo += saldoParams.Saldo;
 
         await _uWork.Commit();
 
