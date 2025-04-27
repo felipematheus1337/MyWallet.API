@@ -98,7 +98,7 @@ Paginação em listagens de transações
 
 Melhor detalhamento nas mensagens de erro
 
-🧑‍💻 Autor
+🧑‍💻
 Feito com dedicação por Felipe Matheus 🚀
 
 🔥 Observação
