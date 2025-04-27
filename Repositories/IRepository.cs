@@ -6,7 +6,8 @@ public interface IRepository<T>
 {
     Task<IEnumerable<T>> GetAll();
 
-    Task<T?> Get(Expression<Func<T, bool>> predicate);
+    Task<T?> Get(Expression<Func<T, bool>> predicate,
+        params Expression<Func<T, object>>[] includes);
 
     Task<T?> Create(T entity);
 

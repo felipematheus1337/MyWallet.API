@@ -24,11 +24,21 @@ public class Repository<T> : IRepository<T> where T : class
         _context.Set<T>().Remove(entity);
     }
 
-    public async Task<T?> Get(Expression<Func<T, bool>> predicate)
+    public async Task<T?> Get(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includes)
     {
-        return await _context.Set<T>().FirstOrDefaultAsync(predicate);
-            
+        IQueryable<T> query = _context.Set<T>();
+
+        if (includes != null)
+        {
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+        }
+
+        return await query.FirstOrDefaultAsync(predicate);
     }
+
 
     public async Task<IEnumerable<T>> GetAll()
     {

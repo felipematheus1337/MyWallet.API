@@ -4,11 +4,11 @@ namespace MyWalletApi.Services
 {
     public interface IBusinessService
     {
-        void CreateUser(CreateUserDto dto);
+        Task CreateUser(CreateUserDto dto);
 
         Task<decimal> ObterSaldo(int usuarioId);
 
-        void AdicionarSaldo(int usuarioId, decimal saldo);
+        Task AdicionarSaldo(int usuarioId, decimal saldo);
 
         Task<IEnumerable<TransacaoResponseDto>> ObterTransacoes(int usuarioId);
 
