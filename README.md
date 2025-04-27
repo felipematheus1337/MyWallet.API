@@ -1,7 +1,7 @@
-﻿📚 MyWalletApi
+﻿# 📚 MyWalletApi
 Sistema de gerenciamento de carteiras de usuários, com suporte a transações financeiras.
 
-🚀 Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 .NET 8
 
 ASP.NET Core Web API
@@ -16,7 +16,10 @@ Repository Pattern + Unit of Work
 
 Filtro Global de Exceptions (ApiExceptionFilter)
 
-🏗️ Estrutura do Projeto
+<hr>
+
+## 🏗️ Estrutura do Projeto
+
 Context/ - Configurações de banco de dados (DbContext)
 
 Repositories/ - Repositórios para acesso aos dados
@@ -29,7 +32,10 @@ Mapper/ - Configuração de mapeamento entre entidades e DTOs
 
 Controllers/ - Endpoints da API
 
-🧠 Principais Entidades
+<hr>
+
+## 🧠 Principais Entidades
+<img src="https://github.com/felipematheus1337/MyWallet.API/blob/dev/assets/er_diagrama.png?raw=true" />
 Usuário
 
 Possui 1 carteira
@@ -48,24 +54,16 @@ Pertence a uma carteira
 
 Representa movimentações financeiras (entrada ou saída)
 
-⚙️ Como rodar o projeto localmente
+<hr>
+ 
+## ⚙️ Como rodar o projeto localmente
+
 Clone o repositório:
-
-bash
-Copiar
-Editar
 git clone https://github.com/seu-usuario/MyWalletApi.git
-Navegue até a pasta do projeto:
 
-bash
-Copiar
-Editar
+Navegue até a pasta do projeto:
 cd MyWalletApi
 Configure a connection string no arquivo appsettings.json:
-
-json
-Copiar
-Editar
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=SEU_SERVIDOR;Database=MyWalletDb;Trusted_Connection=True;"
@@ -73,23 +71,12 @@ Editar
 }
 Execute as migrações para criar o banco de dados:
 
-bash
-Copiar
-Editar
 dotnet ef database update
 Rode a aplicação:
-
-bash
-Copiar
-Editar
 dotnet run
-Acesse o Swagger para testar a API:
+<hr>
 
-bash
-Copiar
-Editar
-https://localhost:5001/swagger
-🛡️ Boas práticas implementadas
+## 🛡️ Boas práticas implementadas
 Uso de DTOs para proteger o modelo de domínio
 
 Validação e tratamento de erros globais
@@ -102,7 +89,7 @@ Uso de async/await para operações assíncronas
 
 Commit explícito no UnitOfWork para garantir transações consistentes
 
-✨ Melhorias Futuras
+## ✨ Melhorias Futuras
 Implementar autenticação e autorização (JWT)
 
 Registro de logs com serilog
