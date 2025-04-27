@@ -15,7 +15,6 @@ namespace MyWalletApi.Services
         Task<TransacaoResponseDto> CriarTransacao(CreateTransacaoDto dto);
 
         Task<CarteiraResponseDto> ObterDadosCarteira(int usuarioId);
-)
 
 
     }

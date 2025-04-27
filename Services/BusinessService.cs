@@ -57,6 +57,7 @@ public class BusinessService : IBusinessService
         if (carteira is null) throw new InvalidOperationException($"Carteira não encontrada com o id: {carteiraId}");
 
         var transacao = _mapper.Map<Transacao>(dto);
+        transacao.Data = DateTime.Now;
 
         if (transacao is null) throw new InvalidOperationException("Transação é null.");
 
