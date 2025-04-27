@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using MyWalletApi.Context;
+using MyWalletApi.Filter;
 using MyWalletApi.Mapper;
 using MyWalletApi.Repositories;
 using MyWalletApi.Services;
@@ -8,7 +9,10 @@ using MyWalletApi.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddControllers().AddJsonOptions(options =>
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add(typeof(ApiExceptionFilter));
+}).AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 });
